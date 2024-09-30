@@ -27,23 +27,27 @@ while wanna_play_again == "yes":            # the whole program loop
                 print("pwweze use numbers")
         if tries_left <= 0:
             print("you quit the game")
-        if tries_left > 0:
+        else:
 
             while your_guess != the_random_number and tries_left > 0:         # the game loop + your guess input
                 while True:
                     try:
-                        your_guess = int(input(f"{your_guess_hig_low} what do you think the random number is? "))
+                        your_guess = int(input(f"\n{your_guess_hig_low} what do you think the random number is 1-100? "))
                         break
                     except:
-                        print("pwwese enter a number or any number below 1 to quit")
-
-                if your_guess != the_random_number:          # the game loop + logic if you win, quit or lose
-                    tries_left -= 1
-                    print(f"you have {tries_left} left \n")
-                if your_guess > the_random_number:
-                    your_guess_hig_low = bcolors.RED + "your guess was to high, " + bcolors.DEFAULT
-                elif your_guess < the_random_number:
-                    your_guess_hig_low = bcolors.BLUE + "your guess was to low, " + bcolors.DEFAULT
+                        print("pwwese use a number below 101 for your guess or any number below 1 to quit")
+                if your_guess > 100:
+                    print("pwwese use a number below 101 for your guess or any number below 1 to quit")
+                    your_guess_hig_low = "so"
+                else:
+                    if your_guess > the_random_number:          # the game loop + logic if you win, quit or lose
+                        tries_left -= 1
+                        print(f"you have {tries_left} left")
+                        your_guess_hig_low = bcolors.RED + "your guess was to high," + bcolors.DEFAULT
+                    elif your_guess < the_random_number:
+                        tries_left -= 1
+                        print(f"you have {tries_left} left")
+                        your_guess_hig_low = bcolors.BLUE + "your guess was to low," + bcolors.DEFAULT
         break
 
     if your_guess == the_random_number:          # did you win or lose
