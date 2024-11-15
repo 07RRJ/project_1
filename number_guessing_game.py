@@ -48,7 +48,7 @@ while True:            # the whole program loop
     if your_guess == the_random_number:          # did you win or lose
         print(f"{bcolors.GREEN}\n\ncorrect(= \nyou won, congrats with {tries_left} tries_left to spare \n{bcolors.DEFAULT}")
     else:
-        print(bcolors.BRIGHT_RED + "\nYou lose BOZO" + bcolors.DEFAULT)
+        print(f"{bcolors.BRIGHT_RED} \nYou lose BOZO {bcolors.DEFAULT} \nthe random number was {bcolors.BRIGHT_RED}\"{the_random_number}\"\n {bcolors.DEFAULT}")
 
     wanna_play_again = input(f"do you want to play again,{bcolors.GREEN} \"y\"{bcolors.DEFAULT} to play again and {bcolors.BRIGHT_RED}anything else {bcolors.DEFAULT}to stop \n").lower()           # this is if you want to start again if you won/lost/quit 
     if wanna_play_again != "y":
